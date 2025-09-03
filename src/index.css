@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Design System - Minimalist Developer Portfolio
+Based on Jesse Martinez style: Black background, white text, green accents
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core Colors - Minimalist Black & White with Green Accent */
+    --background: 0 0% 0%;              /* Pure Black #000000 */
+    --foreground: 0 0% 100%;            /* Pure White #ffffff */
+    
+    --surface: 0 0% 5%;                 /* Subtle surface color */
+    --surface-foreground: 0 0% 90%;     /* Light gray for surface text */
+    
+    --card: 0 0% 2%;
+    --card-foreground: 0 0% 100%;
+    
+    --accent-green: 152 100% 50%;       /* Bright Green #00ff88 */
+    --accent-green-muted: 152 50% 40%;  /* Muted green for subtle uses */
+    
+    --border: 0 0% 15%;                 /* Dark borders */
+    --border-subtle: 0 0% 8%;           /* Very subtle borders */
+    
+    /* Interactive States */
+    --hover: 0 0% 10%;                  /* Hover backgrounds */
+    --pressed: 0 0% 5%;                 /* Pressed states */
+    
+    /* Typography Hierarchy */
+    --text-primary: 0 0% 100%;          /* Main text */
+    --text-secondary: 0 0% 70%;         /* Secondary text */
+    --text-muted: 0 0% 50%;             /* Muted text */
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 3%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-green)), hsl(152 80% 40%));
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 8px 32px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 20px hsl(var(--accent-green) / 0.2);
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+    
+    --radius: 0.375rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
