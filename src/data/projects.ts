@@ -26,20 +26,20 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "project-1",
-    title: "E-Commerce Platform",
-    description: "Полнофункциональная платформа электронной коммерции с современным дизайном, корзиной покупок, и системой платежей.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
+    title: "Boxing School",
+    description: "Boxing School — это цифровая экосистема для современной спортивной школы бокса, которая объединяет сайт для лидогенерации, Telegram-бота для записи и оплаты занятий, а также удобную админ-панель для управления клубом.\n\nБлагодаря интеграции всех модулей Boxing School:\n1. клиенты получают максимально удобный способ записи и оплаты;\n2. владельцы школы экономят время и ресурсы на администрировании;\n 3. бизнес получает прозрачный инструмент для роста и масштабирования.",
+    tech: ["HTML", "CSS", "React", "Python", "SQLAlchemy", "FastAPI", "Flusk", "pyTelegramBotAPI", "PostgreSQL"],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com/username/project",
+    githubUrl: "https://github.com/The1uknow/boxing_school",
     image: ecommerceImage
   },
   {
     id: "project-2", 
-    title: "Task Management App",
-    description: "Минималистичное приложение для управления задачами с drag-and-drop функциональностью и real-time обновлениями.",
-    tech: ["React", "Firebase", "TypeScript", "Framer Motion"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/username/project",
+    title: "Eco Life Etiqod",
+    description: "Eco Life Etiqod — это сайт курорта здоровья, который демонстрирует целебную родниковую воду, шведский стол и уютную семейную атмосферу. Сайт имеет адаптивный многостраничный дизайн с современным оформлением и плавными анимациями. Построен с использованием HTML, CSS, JavaScript и React, он обеспечивает удобный пользовательский опыт на всех устройствах.",
+    tech: ["HTML", "CSS", "Java Script", "React"],
+    liveUrl: "https://eco-life-etiqod.com",
+    githubUrl: "https://github.com/pakhlavonKh/ecoLife",
     image: taskAppImage
   }
 ];

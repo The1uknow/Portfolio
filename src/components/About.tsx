@@ -6,11 +6,11 @@ import profilePhoto from '@/assets/profile-photo.jpg';
 export const About = () => {
   return (
     <section id="about" className="py-20 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* About Text */}
-          <div className="animate-fade-in-up">
+          <div className="animate-fade-in-up lg:pr-16">
             <h2 className="font-inter font-bold text-4xl md:text-5xl text-text-primary mb-8">
               ABOUT ME
             </h2>
@@ -34,7 +34,7 @@ export const About = () => {
             
             {/* Skills */}
             <div className="mt-8">
-              <h3 className="font-inter font-semibold text-xl text-text-primary mb-4">
+              <h3 className="font-inter font-semibold text-2xl text-text-primary mb-4">
                 Технологии
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -57,11 +57,11 @@ export const About = () => {
           {/* About Image */}
           <div className="animate-fade-in">
             <div className="relative">
-              <div className="aspect-square bg-surface rounded-lg overflow-hidden">
+              <div className="bg-surface rounded-lg overflow-hidden ml-12">
                 <img 
                   src={profilePhoto} 
                   alt="Mukhsin Kamolov"
-                  className="w-full h-full object-cover"
+                  className="w-[506px] h-[600px] object-cover rounded-lg -mt-14"
                 />
               </div>
               

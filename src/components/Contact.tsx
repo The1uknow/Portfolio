@@ -42,7 +42,7 @@ const ContactLink = ({
  */
 export const Contact = () => {
   return (
-    <section id="contact" className="py-20 px-6">
+    <section id="contact" className="py-20 px-6 pb-0">
       <div className="max-w-4xl mx-auto text-center">
         
         {/* Section Header */}
@@ -88,7 +88,7 @@ export const Contact = () => {
         </div>
         
         {/* Footer */}
-        <div className="mt-16 pt-8 border-t border-border-subtle">
+        <div className="mt-16 pt-8 pb-8 border-t border-border-subtle">
           <p className="text-text-muted text-sm">
             © 2025 made by Mukhsin Kamolov
           </p>
