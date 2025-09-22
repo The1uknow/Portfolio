@@ -1,7 +1,6 @@
 import { ArrowDown } from "lucide-react";
 import { useCallback } from "react";
 
-// верхний ряд услуг
 const TOP_SERVICES = [
   "Сайты",
   "Telegram-боты",
@@ -10,12 +9,8 @@ const TOP_SERVICES = [
   "ERP-системы",
 ];
 
-// нижний ряд услуг
 const BOTTOM_SERVICES = ["E-commerce", "Админ-панели", "DevOps & Деплой"];
 
-/**
- * Hero Section — главная секция с именем и заявлением о профессии
- */
 export const Hero = () => {
   const handleScroll = useCallback(() => {
     const prefersReduced = window.matchMedia(
@@ -40,28 +35,31 @@ export const Hero = () => {
         overflow-hidden
       "
     >
-      {/* Верхняя линия услуг */}
-      <div
-        className="
-          absolute top-[12%] left-1/2 -translate-x-1/2
-          flex flex-wrap justify-center gap-4 md:gap-6
-          text-[clamp(0.8rem,2.5vw,1rem)]
-          text-text-secondary/70
-          opacity-0 animate-fade-in-down
-        "
-      >
-        {TOP_SERVICES.map((s, i) => (
-          <span
-            key={s}
-            className="whitespace-nowrap"
-            style={{ animationDelay: `${i * 0.15 + 0.2}s` }}
+      {/* ВЕРХНЯЯ ЛИНИЯ — всегда по центру */}
+      <div className="absolute inset-x-0 top-[12%]">
+        <div className="w-full grid place-items-center">
+          <div
+            className="
+              flex flex-wrap justify-center gap-4 md:gap-6
+              text-[clamp(0.8rem,2.5vw,1rem)]
+              text-text-secondary/70
+              opacity-0 animate-fade-in-down
+            "
           >
-            {s}
-          </span>
-        ))}
+            {TOP_SERVICES.map((s, i) => (
+              <span
+                key={s}
+                className="whitespace-nowrap"
+                style={{ animationDelay: `${i * 0.15 + 0.2}s` }}
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* Основной контент */}
+      {/* ЦЕНТРАЛЬНЫЙ КОНТЕНТ */}
       <div className="relative z-10 max-w-5xl w-full mx-auto">
         <h1
           className="
@@ -84,35 +82,35 @@ export const Hero = () => {
           >
             FULLSTACK DEVELOPER
           </p>
-          <div
-            className="w-24 h-[3px] bg-accent-green mx-auto mt-4"
-            aria-hidden="true"
-          />
+          <div className="w-24 h-[3px] bg-accent-green mx-auto mt-4" aria-hidden="true" />
         </div>
       </div>
 
-      {/* Нижняя линия услуг */}
-      <div
-        className="
-          absolute bottom-[18%] left-1/2 -translate-x-1/2
-          flex flex-wrap justify-center gap-4 md:gap-6
-          text-[clamp(0.8rem,2.5vw,1rem)]
-          text-text-secondary/70
-          opacity-0 animate-fade-in-up
-        "
-      >
-        {BOTTOM_SERVICES.map((s, i) => (
-          <span
-            key={s}
-            className="whitespace-nowrap"
-            style={{ animationDelay: `${i * 0.15 + 0.4}s` }}
+      {/* НИЖНЯЯ ЛИНИЯ — всегда по центру */}
+      <div className="absolute inset-x-0 bottom-[18%]">
+        <div className="w-full grid place-items-center">
+          <div
+            className="
+              flex flex-wrap justify-center gap-4 md:gap-6
+              text-[clamp(0.8rem,2.5vw,1rem)]
+              text-text-secondary/70
+              opacity-0 animate-fade-in-up
+            "
           >
-            {s}
-          </span>
-        ))}
+            {BOTTOM_SERVICES.map((s, i) => (
+              <span
+                key={s}
+                className="whitespace-nowrap"
+                style={{ animationDelay: `${i * 0.15 + 0.4}s` }}
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Индикатор прокрутки */}
       <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2">
         <button
           type="button"
@@ -127,12 +125,7 @@ export const Hero = () => {
           aria-label="Прокрутить к проектам"
         >
           <ArrowDown
-            className="
-              w-8 h-8
-              text-text-muted
-              group-hover:text-accent-green
-              transition-colors
-            "
+            className="w-8 h-8 text-text-muted group-hover:text-accent-green transition-colors"
             aria-hidden="true"
           />
         </button>
