@@ -159,3 +159,21 @@ html, body { overflow-x: hidden; }
 *::-webkit-scrollbar { width: 8px; height: 8px; }
 *::-webkit-scrollbar-thumb { background: hsl(0 0% 20%); border-radius: 999px; }
 *::-webkit-scrollbar-track { background: transparent; }
+
+
+
+@keyframes fade-in-down {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.8s ease forwards;
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease forwards;
+}

@@ -1,55 +1,17 @@
 import { ArrowDown } from "lucide-react";
-import { useCallback, memo } from "react";
+import { useCallback } from "react";
 
-// список услуг для облака (RU)
-const SERVICES = [
+// верхний ряд услуг
+const TOP_SERVICES = [
   "Сайты",
   "Telegram-боты",
   "Приложения",
   "CRM-системы",
   "ERP-системы",
-  "E-commerce",
-  "Админ-панели",
-  "DevOps & Деплой",
 ];
 
-// Небольшой компонент-облако, которое живёт ПОД контентом hero
-const ServicesCloud = memo(() => {
-  return (
-    <div
-      className="
-        absolute inset-0 z-0
-        pointer-events-none select-none
-        flex flex-wrap items-center justify-center
-        gap-6 md:gap-8
-        opacity-70    /* 70% как просил (60–80%) */
-      "
-      aria-hidden="true"
-      // мягкая маска по краям, чтобы слова плавно исчезали
-      style={{
-        WebkitMaskImage:
-          "radial-gradient(60% 60% at 50% 50%, black 60%, transparent 100%)",
-        maskImage:
-          "radial-gradient(60% 60% at 50% 50%, black 60%, transparent 100%)",
-      }}
-    >
-      {SERVICES.map((label, i) => (
-        <span
-          key={label}
-          className="
-            text-[clamp(0.95rem,2.2vw,1.15rem)]
-            text-text-secondary
-            animate-float-slow
-          "
-          // лёгкая рассинхронизация движения
-          style={{ animationDelay: `${i * 0.25}s` }}
-        >
-          {label}
-        </span>
-      ))}
-    </div>
-  );
-});
+// нижний ряд услуг
+const BOTTOM_SERVICES = ["E-commerce", "Админ-панели", "DevOps & Деплой"];
 
 /**
  * Hero Section — главная секция с именем и заявлением о профессии
@@ -74,16 +36,33 @@ export const Hero = () => {
         flex flex-col items-center justify-center
         text-center
         px-6
-        bg-gradient-hero
-        overflow-x-hidden
+        bg-gradient-hero hero-noise
+        overflow-hidden
       "
     >
-      {/* ОБЛАКО СЛОВ — позади контента */}
-      <ServicesCloud />
+      {/* Верхняя линия услуг */}
+      <div
+        className="
+          absolute top-[12%] left-1/2 -translate-x-1/2
+          flex flex-wrap justify-center gap-4 md:gap-6
+          text-[clamp(0.8rem,2.5vw,1rem)]
+          text-text-secondary/70
+          opacity-0 animate-fade-in-down
+        "
+      >
+        {TOP_SERVICES.map((s, i) => (
+          <span
+            key={s}
+            className="whitespace-nowrap"
+            style={{ animationDelay: `${i * 0.15 + 0.2}s` }}
+          >
+            {s}
+          </span>
+        ))}
+      </div>
 
-      {/* Основной контент — поверх облака */}
+      {/* Основной контент */}
       <div className="relative z-10 max-w-5xl w-full mx-auto">
-        {/* Main Title */}
         <h1
           className="
             font-inter font-extrabold leading-[0.95]
@@ -95,7 +74,6 @@ export const Hero = () => {
           <span className="text-accent-green block">KAMOLOV</span>
         </h1>
 
-        {/* Statement */}
         <div className="mt-5 md:mt-6">
           <p
             className="
@@ -111,6 +89,27 @@ export const Hero = () => {
             aria-hidden="true"
           />
         </div>
+      </div>
+
+      {/* Нижняя линия услуг */}
+      <div
+        className="
+          absolute bottom-[18%] left-1/2 -translate-x-1/2
+          flex flex-wrap justify-center gap-4 md:gap-6
+          text-[clamp(0.8rem,2.5vw,1rem)]
+          text-text-secondary/70
+          opacity-0 animate-fade-in-up
+        "
+      >
+        {BOTTOM_SERVICES.map((s, i) => (
+          <span
+            key={s}
+            className="whitespace-nowrap"
+            style={{ animationDelay: `${i * 0.15 + 0.4}s` }}
+          >
+            {s}
+          </span>
+        ))}
       </div>
 
       {/* Scroll Indicator */}
