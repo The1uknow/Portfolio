@@ -37,7 +37,7 @@ All colors MUST be HSL.
     --text-muted: 0 0% 50%;             /* Muted text */
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 3%));
+    --gradient-hero: radial-gradient(80% 60% at 50% 30%, hsl(0 0% 6%) 0%, hsl(0 0% 0%) 60%);
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent-green)), hsl(152 80% 40%));
     
     /* Shadows */
@@ -50,6 +50,9 @@ All colors MUST be HSL.
     --transition-fast: all 0.15s ease-out;
     
     --radius: 0.375rem;
+
+    color-scheme: dark; /* dark UI hints */
+    --noise-opacity: 0.03;
   }
 }
 
@@ -60,9 +63,99 @@ All colors MUST be HSL.
 
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--accent-green) / 0.25);
+    color: hsl(var(--foreground));
   }
 }
+
+/* hero noise overlay */
+.hero-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'>\
+<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/></filter>\
+<rect width='100%' height='100%' filter='url(%23n)' opacity='0.15'/>\
+</svg>");
+  mix-blend-mode: soft-light;
+  opacity: var(--noise-opacity);
+}
+
+@layer utilities {
+  /* Gradient background */
+  .bg-gradient-hero { background: var(--gradient-hero); }
+
+  /* Glow shadow */
+  .hover\:shadow-glow:hover { box-shadow: var(--shadow-glow); }
+
+  /* Soft mask for background word cloud */
+  .mask-soft {
+    -webkit-mask-image: radial-gradient(60% 60% at 50% 50%, black 60%, transparent 100%);
+            mask-image: radial-gradient(60% 60% at 50% 50%, black 60%, transparent 100%);
+  }
+
+  /* Balanced headings */
+  .text-balance { text-wrap: balance; }
+
+  /* Safe area gutters (iPhone notch) */
+  .safe-gutters {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
+
+  /* Scroll margin for anchored sections */
+  .scroll-mt-header { scroll-margin-top: 80px; }
+}
+
+/* Float animations for services cloud */
+@keyframes float-slow {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+@keyframes float-slower {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.animate-float-slow   { animation: float-slow 6s ease-in-out infinite; }
+.animate-float-slower { animation: float-slower 8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-slower,
+  .motion-safe\:animate-bounce {
+    animation: none !important;
+  }
+}
+
+/* Focus ring utility */
+@layer components {
+  .focus-ring {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--accent-green) / 0.6);
+  }
+  .focusable:focus-visible { @apply focus-ring; }
+}
+
+/* Global scrollbar tweaks */
+html, body { overflow-x: hidden; }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0 0% 20%) transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: hsl(0 0% 20%); border-radius: 999px; }
+*::-webkit-scrollbar-track { background: transparent; }
