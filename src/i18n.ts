@@ -26,7 +26,9 @@ export function setLang(lang: Lang) {
   if (!dictionaries[lang]) return;
   currentLang = lang;
   localStorage.setItem("lang", lang);
-  window.location.reload(); // чтобы обновился весь текст
+
+  // 🚀 вместо reload — диспатчим событие
+  window.dispatchEvent(new CustomEvent("languageChanged", { detail: lang }));
 }
 
 // === Получение текущего языка ===
@@ -35,7 +37,6 @@ export function getCurrentLang(): Lang {
 }
 
 // === Перевод строки ===
-// Пример ключа: "hero.title"
 export function t(path: string): string {
   const parts = path.split(".");
   let obj: any = dictionaries[currentLang];

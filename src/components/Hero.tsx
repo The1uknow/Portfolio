@@ -1,8 +1,22 @@
 import { ArrowDown } from "lucide-react";
-import { useCallback } from "react";
-import { t, tArray, setLang } from "@/i18n";
+import { useCallback, useEffect, useState } from "react";
+import { t, tArray, setLang, getCurrentLang } from "@/i18n";
 
 export const Hero = () => {
+  const [lang, setLangState] = useState(getCurrentLang());
+
+  // Подписываемся на событие смены языка
+  useEffect(() => {
+    const handler = (e: CustomEvent) => {
+      setLangState(e.detail);
+    };
+    window.addEventListener("languageChanged", handler as EventListener);
+
+    return () => {
+      window.removeEventListener("languageChanged", handler as EventListener);
+    };
+  }, []);
+
   const handleScroll = useCallback(() => {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -36,26 +50,17 @@ export const Hero = () => {
           {t("nav.contact")}
         </a>
         <div className="flex items-center gap-2">
-          <span
-            onClick={() => setLang("ru")}
-            className="cursor-pointer hover:text-accent-green"
-          >
-            RU
-          </span>
-          <span className="text-text-muted">|</span>
-          <span
-            onClick={() => setLang("en")}
-            className="cursor-pointer hover:text-accent-green"
-          >
-            EN
-          </span>
-          <span className="text-text-muted">|</span>
-          <span
-            onClick={() => setLang("uz")}
-            className="cursor-pointer hover:text-accent-green"
-          >
-            UZ
-          </span>
+          {(["ru", "en", "uz"] as const).map((lng) => (
+            <span
+              key={lng}
+              onClick={() => setLang(lng)}
+              className={`cursor-pointer hover:text-accent-green ${
+                lang === lng ? "text-accent-green font-semibold" : ""
+              }`}
+            >
+              {lng.toUpperCase()}
+            </span>
+          ))}
         </div>
       </nav>
 
@@ -88,7 +93,7 @@ export const Hero = () => {
           <div className="w-24 h-[3px] bg-accent-green mx-auto mt-4" />
         </div>
 
-        {/* === Услуги (поочередное появление) === */}
+        {/* === Услуги === */}
         <div className="mt-10 flex flex-wrap justify-center gap-4 md:gap-6 text-[clamp(0.8rem,2.5vw,1rem)] text-text-secondary/80">
           {services.map((s, i) => (
             <span

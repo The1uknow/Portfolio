@@ -1,6 +1,7 @@
 import { Mail, Github, Linkedin, MessageCircle } from "lucide-react";
 import type { SVGProps } from "react";
-import { t } from "@/i18n";
+import { t, getCurrentLang } from "@/i18n";
+import { useEffect, useState } from "react";
 
 type ContactLinkProps = {
   href: string;
@@ -29,6 +30,14 @@ const ContactLink = ({ href, icon: Icon, label, username }: ContactLinkProps) =>
 );
 
 export const Contact = () => {
+  const [lang, setLangState] = useState(getCurrentLang());
+
+  useEffect(() => {
+    const handler = (e: CustomEvent) => setLangState(e.detail);
+    window.addEventListener("languageChanged", handler as EventListener);
+    return () => window.removeEventListener("languageChanged", handler as EventListener);
+  }, []);
+
   const mailto = `mailto:kamolovmuhsin@icloud.com?subject=${encodeURIComponent(
     t("contact.mailSubject")
   )}`;

@@ -18,9 +18,9 @@ export default {
   about: {
     title: "About Me",
     paragraphs: [
-      "I have been in IT since 2025. I am a full-stack developer: I build modern websites, Telegram bots, web applications, and CRM/ERP systems. My main focus is on Python, React, Node.js, and TypeScript.",
-      "I have worked with clients of different levels — from entrepreneurs to large companies. I love writing clean, high-performance code and creating intuitive interfaces.",
-      "I constantly explore new technologies and development approaches. Always open to exciting projects and new challenges.",
+    'I have been in IT since 2025. I am a <span class="text-accent-green">full-stack developer</span>: I build modern websites, Telegram bots, web applications, and CRM/ERP systems. My main focus is on <span class="text-accent-green">Python</span>, <span class="text-accent-green">React</span>, <span class="text-accent-green">Node.js</span>, and <span class="text-accent-green">TypeScript</span>.',
+    'I have worked with clients of different levels — from entrepreneurs to large companies. I love writing clean, high-performance code and creating intuitive interfaces.',
+    'I constantly explore new technologies and development approaches. Always <span class="text-accent-green">open to exciting projects and new challenges</span>.'
     ],
     skillsTitle: "Technologies",
     skills: [

@@ -1,7 +1,16 @@
 import profilePhoto from "@/assets/profile-photo.jpg";
-import { t, tArray } from "@/i18n";
+import { t, tArray, getCurrentLang } from "@/i18n";
+import { useEffect, useState } from "react";
 
 export const About = () => {
+  const [lang, setLangState] = useState(getCurrentLang());
+
+  useEffect(() => {
+    const handler = (e: CustomEvent) => setLangState(e.detail);
+    window.addEventListener("languageChanged", handler as EventListener);
+    return () => window.removeEventListener("languageChanged", handler as EventListener);
+  }, []);
+
   const paragraphs = tArray("about.paragraphs");
   const skills = tArray("about.skills");
 
@@ -14,7 +23,7 @@ export const About = () => {
           </h2>
           <div className="space-y-5 text-text-secondary leading-relaxed">
             {paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
+              <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
             ))}
           </div>
           <h3 className="mt-8 font-inter font-semibold text-lg text-text-primary mb-4">

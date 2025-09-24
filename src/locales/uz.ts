@@ -18,9 +18,9 @@ export default {
   about: {
     title: "Men haqimda",
     paragraphs: [
-      "Men 2025 yildan beri IT sohasidaman. Full-stack dasturchiman: zamonaviy saytlar, Telegram botlar, veb-ilovalar va CRM/ERP tizimlarini yarataman. Asosiy yo‘nalishim — Python, React, Node.js va TypeScript.",
-      "Turli darajadagi mijozlar bilan ishlaganman — tadbirkorlardan tortib yirik kompaniyalargacha. Toza va samarali kod yozishni va qulay interfeyslar yaratishni yaxshi ko‘raman.",
-      "Yangi texnologiyalar va ishlab chiqish yondashuvlarini muntazam o‘rganib boraman. Qiziqarli loyihalar va yangi chaqiriqlarga doim ochiqman.",
+    'Men 2025 yildan beri IT sohasidaman. <span class="text-accent-green">Full-stack dasturchiman</span>: zamonaviy saytlar, Telegram botlar, veb-ilovalar va CRM/ERP tizimlarini yarataman. Asosiy yo‘nalishim — <span class="text-accent-green">Python</span>, <span class="text-accent-green">React</span>, <span class="text-accent-green">Node.js</span> va <span class="text-accent-green">TypeScript</span>.',
+    'Turli darajadagi mijozlar bilan ishlaganman — tadbirkorlardan tortib yirik kompaniyalargacha. Toza va samarali kod yozishni va qulay interfeyslar yaratishni yaxshi ko‘raman.',
+    'Yangi texnologiyalar va ishlab chiqish yondashuvlarini muntazam o‘rganib boraman. Har doim <span class="text-accent-green">ochiqman qiziqarli loyihalar va yangi chaqiriqlarga</span>.'
     ],
     skillsTitle: "Texnologiyalar",
     skills: [
