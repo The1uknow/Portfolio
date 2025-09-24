@@ -77,7 +77,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-md font-medium bg-accent-green text-background hover:bg-accent-green-muted transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
-              {t("projects.live")} {/* 🔥 фиксированный ключ */}
+              {t("projects.liveDemo")} {/* 🔥 фиксированный ключ */}
             </a>
           )}
           {project.githubUrl && (

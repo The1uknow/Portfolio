@@ -18,7 +18,7 @@ export const About = () => {
             ))}
           </div>
           <h3 className="mt-8 font-inter font-semibold text-lg text-text-primary mb-4">
-            {t("about.technologies")}
+            {t("about.skillsTitle")}
           </h3>
           <ul className="flex flex-wrap gap-2.5">
             {skills.map((s) => (

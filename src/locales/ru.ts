@@ -5,7 +5,7 @@ export default {
     contact: "Контакты",
   },
   hero: {
-    subtitle: "FULLSTACK DEVELOPER",
+    subtitle: "FULLSTACK РАЗРАБОТЧИК",
     services: [
       "Сайты",
       "Telegram-боты",

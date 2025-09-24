@@ -5,7 +5,7 @@ export default {
     contact: "Aloqa",
   },
   hero: {
-    subtitle: "FULLSTACK DEVELOPER",
+    subtitle: "FULLSTACK DASTURCHI",
     services: [
       "Saytlar",
       "Telegram botlar",
