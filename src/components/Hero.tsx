@@ -32,8 +32,11 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-dvh flex flex-col items-center justify-center text-center px-6 bg-gradient-hero hero-noise overflow-hidden"
+      className="relative min-h-dvh flex flex-col items-center justify-center text-center px-6 bg-gradient-hero"
     >
+      {/* === Фон (шум, декоративный слой) === */}
+      <div className="absolute inset-0 hero-noise overflow-hidden pointer-events-none" />
+
       {/* === Навигация (фиксированная и анимированная) === */}
       <nav
         className="fixed top-0 left-0 right-0 z-50 w-full flex justify-center items-center gap-6 md:gap-10 py-4 text-sm md:text-base font-medium text-text-secondary backdrop-blur bg-background/70 opacity-0 animate-slide-up"
@@ -64,8 +67,11 @@ export const Hero = () => {
         </div>
       </nav>
 
-      {/* === Контент === */}
-      <div className="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center flex-1">
+      {/* === Контент (ключ зависит от языка, чтобы перерисовывалось) === */}
+      <div
+        key={lang}
+        className="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center flex-1"
+      >
         {/* Имя */}
         <h1 className="font-inter font-extrabold leading-[0.95] text-[clamp(2.4rem,8vw,6.25rem)] tracking-tight">
           <span
@@ -93,7 +99,7 @@ export const Hero = () => {
           <div className="w-24 h-[3px] bg-accent-green mx-auto mt-4" />
         </div>
 
-        {/* === Услуги === */}
+        {/* === Услуги (поочередное появление) === */}
         <div className="mt-10 flex flex-wrap justify-center gap-4 md:gap-6 text-[clamp(0.8rem,2.5vw,1rem)] text-text-secondary/80">
           {services.map((s, i) => (
             <span
@@ -108,7 +114,7 @@ export const Hero = () => {
       </div>
 
       {/* === Индикатор скролла === */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2">
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-10">
         <button
           type="button"
           onClick={handleScroll}
