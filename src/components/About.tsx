@@ -41,7 +41,7 @@ export const About = () => {
         <div>
           <img
             src={profilePhoto}
-            alt={t("about.alt")}
+            alt="My portrait"
             className="w-full h-auto object-cover aspect-[5/6]"
           />
         </div>

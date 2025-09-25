@@ -101,8 +101,8 @@ export const Projects = () => {
       title: t("projects.boxingSchool.title"),
       description: t("projects.boxingSchool.description"),
       tech: ["React", "Node.js", "Telegram Bot", "PostgreSQL"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/The1uknow/boxing_school",
+      liveUrl: "https://boxing-school.netlify.app",
+      githubUrl: "https://github.com/The1uknow/boxing-school",
       image: boxingSchoolImg,
     },
     {
