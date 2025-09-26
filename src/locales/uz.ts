@@ -50,6 +50,6 @@ export default {
     github: "GitHub",
     linkedin: "LinkedIn",
     telegram: "Telegram",
-    footer: "© 2025 Muallif: Mukhsin Kamolov",
+    footer: "© 2025 Barcha huquqlar himoyalangan",
   },
 };
