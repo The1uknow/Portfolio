@@ -31,18 +31,27 @@ export default {
   },
   projects: {
     title: "Selected Work",
+
+    essenza: {
+    title: "Essenza Perfumes",
+    description: "Wholesale platform tailored for Uzbekistan (Argeville official distributor): fragrances sold in liters (5–30 L), luxury catalog visuals, RU/UZ/EN, React/Vite/Tailwind landing on Netlify with Cloudflare, backend/admin in progress, planning on Node.js/Prisma/PostgreSQL."
+    },
+
     boxingSchool: {
       title: "Boxing School",
       description: "Boxing School is a digital ecosystem for a modern boxing school that combines a lead-generation website, a Telegram bot for booking and payments, and a convenient admin panel for club management.\n\nThanks to the integration of all modules:\n1. clients get the most convenient way to book and pay;\n2. school owners save time and resources on administration;\n3. the business receives a transparent tool for growth and scaling.",
     },
+
     ecoLife: {
       title: "Eco Life Etiqod",
       description: "Eco Life Etiqod is a wellness resort website that showcases healing spring water, a buffet, and a cozy family atmosphere. With a responsive multi-page design, modern styling, and smooth animations, it delivers a seamless user experience across all devices. Built with HTML, CSS, JavaScript, and React.",
     },
+
     noPreview: "No preview",
     liveDemo: "Live Demo",
     code: "Source code",
   },
+
   contact: {
     title: "Let's Connect",
     subtitle: "Interested in collaboration? Write me — we’ll discuss your project and find the best solution.",

@@ -4,6 +4,7 @@ import { t, getCurrentLang } from "@/i18n";
 
 import boxingSchoolImg from "@/assets/boxing-school.jpg";
 import ecoLifeImg from "@/assets/eco-life.jpg";
+import essenzaImg from "@/assets/essenza.jpg";
 
 type Project = {
   id: string;
@@ -98,15 +99,6 @@ export const Projects = () => {
   const projects: Project[] = [
     {
       id: "project-1",
-      title: t("projects.boxingSchool.title"),
-      description: t("projects.boxingSchool.description"),
-      tech: ["React", "Node.js", "Telegram Bot", "PostgreSQL"],
-      liveUrl: "https://boxing-school.netlify.app",
-      githubUrl: "https://github.com/The1uknow/boxing-school",
-      image: boxingSchoolImg,
-    },
-    {
-      id: "project-2",
       title: t("projects.ecoLife.title"),
       description: t("projects.ecoLife.description"),
       tech: ["React", "HTML", "CSS", "JavaScript"],
@@ -114,6 +106,27 @@ export const Projects = () => {
       githubUrl: "https://github.com/pakhlavonKh/ecoLife",
       image: ecoLifeImg,
     },
+
+    {
+      id: "project-2",
+      title: t("projects.essenza.title"),
+      description: t("projects.essenza.description"),
+      tech: ["React", "Vite", "TailwindCSS", "Node.js", "Prisma", "PostgreSQL", "Netlify", "Cloudflare"],
+      liveUrl: "https://essenza-demo.netlify.app",
+      githubUrl: "https://github.com/pakhlavonKh/essenza",
+      image: essenzaImg,
+    },
+
+    {
+      id: "project-3",
+      title: t("projects.boxingSchool.title"),
+      description: t("projects.boxingSchool.description"),
+      tech: ["React", "Node.js", "Telegram Bot", "PostgreSQL"],
+      liveUrl: "https://boxing-school.netlify.app",
+      githubUrl: "https://github.com/The1uknow/boxing-school",
+      image: boxingSchoolImg,
+    },
+
   ];
 
   return (
