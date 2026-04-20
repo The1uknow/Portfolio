@@ -12,7 +12,7 @@ import { Contact } from '@/components/Contact';
  */
 const Index = () => {
   return (
-    <main className="bg-background text-foreground font-inter overflow-x-hidden">
+    <main className="bg-transparent text-foreground font-inter overflow-x-hidden">
       <Hero />
       <Projects />
       <About />  

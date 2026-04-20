@@ -37,7 +37,7 @@ All colors MUST be HSL.
     --text-muted: 0 0% 50%;             /* Muted text */
     
     /* Gradients */
-    --gradient-hero: radial-gradient(80% 60% at 50% 30%, hsl(0 0% 6%) 0%, hsl(0 0% 0%) 60%);
+    --gradient-hero: radial-gradient(82% 62% at 50% 30%, hsl(212 34% 12% / 0.42) 0%, hsl(0 0% 0% / 0.2) 58%, transparent 100%);
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent-green)), hsl(152 80% 40%));
     
     /* Shadows */
@@ -74,6 +74,49 @@ All colors MUST be HSL.
   ::selection {
     background: hsl(var(--accent-green) / 0.25);
     color: hsl(var(--foreground));
+  }
+}
+
+/* Global premium animated background layers */
+.premium-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.premium-background__base,
+.premium-background__canvas,
+.premium-background__noise {
+  position: absolute;
+  inset: 0;
+}
+
+.premium-background__base {
+  background:
+    radial-gradient(120% 90% at 50% 14%, rgba(15, 25, 36, 0.36) 0%, rgba(4, 7, 12, 0.6) 35%, rgba(0, 0, 0, 0.96) 62%),
+    #000000;
+}
+
+.premium-background__canvas {
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+.premium-background__noise {
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'>\
+<filter id='grain'><feTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='3' stitchTiles='stitch'/></filter>\
+<rect width='100%' height='100%' filter='url(%23grain)' opacity='0.22'/>\
+</svg>");
+  mix-blend-mode: soft-light;
+  opacity: 0.085;
+}
+
+@media (max-width: 767px) {
+  .premium-background__canvas {
+    opacity: 0.82;
   }
 }
 

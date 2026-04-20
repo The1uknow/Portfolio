@@ -53,7 +53,7 @@ export const Contact = () => {
 
         <div className="mt-12 grid gap-6 md:gap-7 grid-cols-1 md:grid-cols-2">
           <ContactLink href={mailto} icon={Mail} label={t("contact.email")} username="kamolovmuhsin@icloud.com" />
-          <ContactLink href="https://github.com/The1uknow" icon={Github} label={t("contact.github")} username="@The1uknow" />
+          <ContactLink href="https://github.com/mukhsinus" icon={Github} label={t("contact.github")} username="@mukhsinus" />
           <ContactLink href="https://www.linkedin.com/in/kamolov-muhsin-9b7133360" icon={Linkedin} label={t("contact.linkedin")} username="Mukhsin Kamolov" />
           <ContactLink href="https://t.me/mukhsinus" icon={MessageCircle} label={t("contact.telegram")} username="@mukhsinus" />
         </div>
