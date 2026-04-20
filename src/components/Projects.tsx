@@ -6,6 +6,11 @@ import ecoLifeImg from "@/assets/eco-life.jpg";
 import essenzaImg from "@/assets/essenza.jpg";
 import mediCareImg from "@/assets/medicare.png";
 import PitStopImg from "@/assets/PitStop One.png";
+import kodBekhzodImg from "@/assets/kodBekhzod.png";
+import ugcImg from "@/assets/ugc.png";
+import karolinaImg from "@/assets/karolina.png";
+import tfpImg from "@/assets/tfp.png";
+import ttpuPmsImg from "@/assets/ttpupms.png";
 
 type Project = {
   id: string;
@@ -13,6 +18,7 @@ type Project = {
   description: string;
   tech: string[];
   liveUrl?: string;
+  liveLabel?: string;
   githubUrl?: string;
   image?: string;
 };
@@ -69,7 +75,7 @@ const ProjectCard = ({ project }: { project: Project }) => (
             className="inline-flex items-center gap-2 px-4 py-2 rounded-md font-medium bg-accent-green text-background hover:bg-accent-green-muted transition-colors"
           >
             <ExternalLink className="w-4 h-4" />
-            {t("projects.liveDemo")}
+            {project.liveLabel ?? t("projects.liveDemo")}
           </a>
         )}
         {project.githubUrl && (
@@ -136,6 +142,81 @@ export const Projects = () => {
       liveUrl: "https://pitstop-one.netlify.app",
       githubUrl: "https://github.com/mukhsinus/PitStop-One",
       image: PitStopImg,
+    },
+
+    {
+      id: "project-5",
+      title: t("projects.bekhzodCompetition.title"),
+      description: t("projects.bekhzodCompetition.description"),
+      tech: ["React", "TypeScript", "TailwindCSS", "Vite", "Netlify"],
+      liveUrl: "https://kodbekhzod.netlify.app",
+      image: kodBekhzodImg,
+    },
+
+    {
+      id: "project-6",
+      title: t("projects.ugcMarketplace.title"),
+      description: t("projects.ugcMarketplace.description"),
+      tech: ["React", "TypeScript", "TailwindCSS", "Vite", "Node.js", "Express", "PostgreSQL", "Supabase", "Netlify"],
+      liveUrl: "https://ugc-market.netlify.app",
+      image: ugcImg,
+    },
+
+    {
+      id: "project-7",
+      title: t("projects.karolinaBeauty.title"),
+      description: t("projects.karolinaBeauty.description"),
+      tech: ["React", "TypeScript", "TailwindCSS", "Vite", "Node.js", "Express.js", "PostgreSQL", "Supabase", "REST API", "Telegram Bot", "Netlify"],
+      liveUrl: "https://karolinabeauty.uz/",
+      image: karolinaImg,
+    },
+
+    {
+      id: "project-8",
+      title: t("projects.vantaTfp.title"),
+      description: t("projects.vantaTfp.description"),
+      tech: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "TailwindCSS",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "REST API",
+        "JWT",
+        "RBAC",
+        "i18n",
+        "Netlify",
+        "Responsive UI",
+      ],
+      liveUrl: "https://vantatfp.netlify.app",
+      image: tfpImg,
+    },
+
+    {
+      id: "project-9",
+      title: t("projects.ttpuPms.title"),
+      description: t("projects.ttpuPms.description"),
+      tech: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "TailwindCSS",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Supabase",
+        "Telegram Bot API",
+        "JWT",
+        "RBAC",
+        "REST API",
+        "i18n",
+        "Vercel",
+      ],
+      liveUrl: "https://t.me/TTPUpointsBot",
+      liveLabel: "Open Bot",
+      image: ttpuPmsImg,
     },
 
   ];

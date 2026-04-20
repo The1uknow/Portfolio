@@ -48,6 +48,31 @@ export default {
       description: "PitStop One — a web application for auto service management.\nA single-page administration system designed for centralized management of clients, vehicles, and service operations. The project is implemented as a SPA with emphasis on speed, user-friendly interface, and logical data structure. Deployed on Netlify with fast content delivery through CDN.",
     },
 
+    bekhzodCompetition: {
+      title: "kodBekhzod Competition",
+      description: "Multi-functional digital-platform for the international creative competition named Kamoliddin Bekhzod. The project automates the entire process: from submitting applications and uploading works to jury evaluation and administration of the competition.\n\nThe platform includes three user roles:\n— participant (application submission, work upload, status tracking)\n— jury (work evaluation, comments, scoring system)\n— administrator (application management, participants, categories, and processes)\n\nThe system solves the problem of scalable and transparent competition management, reduces manual workload, and simplifies international event management.",
+    },
+
+    ugcMarketplace: {
+      title: "UGC Marketplace",
+      description: "Digital marketplace connecting brands with UGC creators for content production and collaboration. The platform allows brands to find creators, launch campaigns, hire talent, and receive ready-to-use content, while creators can monetize skills and work with clients.\n\nIncludes creator profiles, campaign posting, content delivery flow, ratings, category filtering, secure payments, and multilingual support. Built as a scalable marketplace product focused on modern creator economy needs.",
+    },
+
+    karolinaBeauty: {
+      title: "Karolina Beauty",
+      description: "Modern e-commerce platform for the beauty industry designed for online product sales and seamless customer interaction. The project includes a structured product catalog, convenient navigation, fast checkout flow, and a user-friendly shopping experience.\n\nBuilt with full backend architecture including product management, order processing, API integrations, admin system, and scalable infrastructure for business growth.",
+    },
+
+    vantaTfp: {
+      title: "Vanta TFP",
+      description: "Vanta TFP is a corporate SaaS platform built to manage internal business operations in one ecosystem. The system combines employee management, task workflows, KPI tracking, payroll calculations, reporting, billing, and notifications inside a unified admin dashboard.\n\nThe platform supports user roles, multilingual experience, scalable architecture, and workflow automation to improve productivity and reduce manual operations.",
+    },
+
+    ttpuPms: {
+      title: "TTPU PMS",
+      description: "TTPU PMS is a multi-functional platform built for managing a university student points and achievements system. The project combines a Telegram bot for students, an admin moderation panel, and a scoring workflow inside one digital ecosystem.\n\nThe platform automates achievement submissions, review queues, score assignment, filtering, moderation workflows, and user management, reducing manual workload and improving internal efficiency.",
+    },
+
     ecoLife: {
       title: "Eco Life Etiqod",
       description: "Eco Life Etiqod is a wellness resort website that showcases healing spring water, a buffet, and a cozy family atmosphere. With a responsive multi-page design, modern styling, and smooth animations, it delivers a seamless user experience across all devices. Built with HTML, CSS, JavaScript, and React.",
