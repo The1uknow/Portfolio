@@ -2,15 +2,15 @@ import { ExternalLink, Github } from "lucide-react";
 import { memo, useEffect, useState } from "react";
 import { t, getCurrentLang } from "@/i18n";
 
-import ecoLifeImg from "@/assets/eco-life.jpg";
-import essenzaImg from "@/assets/essenza.jpg";
-import mediCareImg from "@/assets/medicare.png";
-import PitStopImg from "@/assets/PitStop One.png";
-import kodBekhzodImg from "@/assets/kodBekhzod.png";
-import ugcImg from "@/assets/ugc.png";
-import karolinaImg from "@/assets/karolina.png";
-import tfpImg from "@/assets/tfp.png";
-import ttpuPmsImg from "@/assets/ttpupms.png";
+import ecoLifeImg from "@/assets/eco-life.webp";
+import essenzaImg from "@/assets/essenza.webp";
+import mediCareImg from "@/assets/medicare.webp";
+import PitStopImg from "@/assets/PitStop One.webp";
+import kodBekhzodImg from "@/assets/kodBekhzod.webp";
+import ugcImg from "@/assets/ugc.webp";
+import karolinaImg from "@/assets/karolina.webp";
+import tfpImg from "@/assets/tfp.webp";
+import ttpuPmsImg from "@/assets/ttpupms.webp";
 
 type Project = {
   id: string;
